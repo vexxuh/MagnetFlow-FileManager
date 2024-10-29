@@ -1,0 +1,6 @@
+[package]
+name = "magnetflow-filemanager"
+version = "0.1.0"
+authors=["vexxuh"]
+
+[dependencies]
