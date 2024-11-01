@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option go_package = "github.com/vexxuh/mangnetflow_filemanager/src/generated";
+package filemanager;
+
+service FileManager {
+  rpc StartWatcher (WatchRequest) returns (stream WatchResponse);
+  rpc UploadFile (UploadRequest) returns (UploadResponse);
+}
+
+message WatchRequest {
+  string directory = 1;
+}
+
+message WatchResponse {
+  string event = 1;
+  string fileName = 2;
+}
+
+message UploadRequest {
+  string directory = 1;
+  string fileName = 2;
+  bytes content = 3;
+}
+
+message UploadResponse {
+  string message = 1;
+}
