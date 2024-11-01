@@ -1,0 +1,9 @@
+services:
+  go-grpc-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "50051:50051"
+    volumes:
+      - /path/on/host:/root/data  # Mount the host directory
